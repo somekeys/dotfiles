@@ -1,0 +1,27 @@
+schema:
+  schema_id: kaomoji
+  name: kaomoji
+engine:
+  processors:
+    - key_binder
+    - speller
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - abc_segmentor
+    - fallback_segmentor
+  translators:
+    - r10n_translator
+  filters:
+    - uniquifier
+translator:
+  dictionary: kaomoji
+  spelling_hints: 1
+key_binder:
+  import_preset: default
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " ;'"
+  algebra:
+    - "derive/^.+$/all/"
